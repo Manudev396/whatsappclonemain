@@ -14,6 +14,16 @@ class MyApp extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Color(0xFF0A6752),
+            actions: <Widget> [
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Icon(Icons.search),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child: Icon(Icons.more_vert),
+              ),
+            ],
             bottom: TabBar(
               tabs: [
                 Icon(Icons.camera_alt),
