@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+
+
+
+class Camera extends StatefulWidget {
+  Camera({this.cameras});
+  final List<CameraDescription> cameras;
+
+  @override
+  _CameraState createState() => _CameraState(cameras: cameras);
+}
+
+class _CameraState extends State<Camera> {
+  _CameraState({this.cameras});
+  final List<CameraDescription> cameras;
+
+  CameraController controller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller = CameraController(cameras[1], ResolutionPreset.max);
+    controller.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!controller.value.isInitialized) {
+      return Container();
+    }
+    return MaterialApp(
+      home: CameraPreview(controller),
+    );
+  }
+  }
+
