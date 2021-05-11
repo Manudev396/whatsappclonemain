@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclonefiles/frontend/chatscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +34,14 @@ class MyApp extends StatelessWidget {
               ],
             ),
             title: Text('WhatsApp'),
+          ),
+          body: TabBarView(
+            children: [
+              Icon(Icons.camera_alt),
+              chatscreen(),//Text("Chat Screen"),
+              Text("Status Screen"),
+              Text("Call Screen"),
+            ],
           ),
         ),
       ),
