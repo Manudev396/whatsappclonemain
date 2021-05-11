@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
               tabs: [
                 Icon(Icons.camera_alt),
                 Text('Chats'),
-                Text('Status'),
+                Text('Status'),   //to see other status
                 Text('calls')
               ],
             ),
