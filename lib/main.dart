@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'frontend/camera.dart';
+import 'package:camera/camera.dart';
 
-void main() {
+List<CameraDescription> cameras;
+
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  cameras = await availableCameras();
   runApp(MyApp());
 }
 // this is weird
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,6 +45,15 @@ class MyApp extends StatelessWidget {
               ],
             ),
             title: Text('WhatsApp'),
+          ),
+
+          body: TabBarView(
+            children: [
+              Camera(cameras: cameras,),
+              Icon(Icons.directions_car),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+            ],
           ),
         ),
       ),
