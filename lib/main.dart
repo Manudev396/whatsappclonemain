@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappclonefiles/frontend/chatscreen.dart';
 import 'frontend/camera.dart';
 import 'package:camera/camera.dart';
 
@@ -50,9 +51,10 @@ class _MyAppState extends State<MyApp> {
           body: TabBarView(
             children: [
               Camera(cameras: cameras,),
-              Icon(Icons.directions_car),
+              chatscreen(),
               Icon(Icons.directions_transit),
               Icon(Icons.directions_bike),
+
             ],
           ),
         ),
