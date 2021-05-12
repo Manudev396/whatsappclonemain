@@ -54,7 +54,6 @@ class _MyAppState extends State<MyApp> {
               chatscreen(),
               Icon(Icons.directions_transit),
               Icon(Icons.directions_bike),
-
             ],
           ),
         ),
