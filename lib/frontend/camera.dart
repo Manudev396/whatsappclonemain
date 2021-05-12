@@ -58,7 +58,7 @@ class _CameraState extends State<Camera> {
     super.dispose();
   }
 
-  int oldIndex=0;
+  int _oldIndex=0;
   Icon iconForcam=Icon(Icons.camera_rear);
 
   @override
@@ -85,16 +85,16 @@ class _CameraState extends State<Camera> {
                   SizedBox(width: 30.0,),
                   bottomIcon(icon: iconForcam,size: 50.0,onpress: (){
                     setState(() {
-                      if(oldIndex == 0){
+                      if(_oldIndex == 0){
                         iconForcam = Icon(Icons.camera_rear);
-                        oldIndex = 1;
-                      }else if(oldIndex == 1){
-                        print('rearcam');
+                        _oldIndex = 1;
+                      }else if(_oldIndex == 1){
+                        //print('rearcam');
                         iconForcam = Icon(Icons.camera_front);
-                        oldIndex = 0;
+                        _oldIndex = 0;
                       }
                     });
-                    toggleCamera(oldIndex);
+                    toggleCamera(_oldIndex);
                   }),
                 ],
               ),
