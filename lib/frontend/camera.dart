@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
 
-
 class Camera extends StatefulWidget {
   Camera({this.cameras});
   final List<CameraDescription> cameras;
@@ -12,11 +11,10 @@ class Camera extends StatefulWidget {
 }
 
 class _CameraState extends State<Camera> {
+
   _CameraState({this.cameras});
   final List<CameraDescription> cameras;
   CameraController controller;
-
-
 
   void toggleCamera(int index){
     //if index is 0 back cam and 1 is front cam
@@ -51,7 +49,6 @@ class _CameraState extends State<Camera> {
       setState(() {});
     });
   }
-
   @override
   void dispose() {
     controller?.dispose();
@@ -81,7 +78,9 @@ class _CameraState extends State<Camera> {
                   SizedBox(width: 20.0,),
                   bottomIcon(icon: Icon(Icons.flash_on_rounded),size: 50.0),
                   SizedBox(width: 20.0,),
-                  bottomIcon(icon: Icon(Icons.fiber_manual_record_outlined),size: 100.0),
+                  bottomIcon(icon: Icon(Icons.fiber_manual_record_outlined),size: 100.0,onpress: (){
+                   //need to do taking picture rasks here.
+                  }),
                   SizedBox(width: 30.0,),
                   bottomIcon(icon: iconForcam,size: 50.0,onpress: (){
                     setState(() {
