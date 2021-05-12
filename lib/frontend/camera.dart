@@ -59,7 +59,7 @@ class _CameraState extends State<Camera> {
   }
 
   int _oldIndex=0;
-  Icon iconForcam=Icon(Icons.camera_rear);
+  Icon iconForcam=Icon(Icons.camera_front);
 
   @override
   Widget build(BuildContext context) {
