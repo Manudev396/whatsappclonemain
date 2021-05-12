@@ -24,7 +24,7 @@ class chatscreen extends StatelessWidget {
           SizedBox(width: 5),
           Text("Karthikeyan",
           style: TextStyle(
-          fontSize: 20,
+          fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
           ),
@@ -50,7 +50,7 @@ class chatscreen extends StatelessWidget {
                     SizedBox(width: 5),
                     Text("Manu dev",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
