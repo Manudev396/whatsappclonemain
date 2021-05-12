@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:flutter_flashlight/flutter_flashlight.dart';
 
 
 class Camera extends StatefulWidget {
@@ -58,6 +59,7 @@ class _CameraState extends State<Camera> {
   int _oldIndex=0;
   Icon iconForcam=Icon(Icons.camera_front);
 
+
   @override
   Widget build(BuildContext context) {
     if (!controller.value.isInitialized) {
@@ -76,7 +78,9 @@ class _CameraState extends State<Camera> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(width: 20.0,),
-                  bottomIcon(icon: Icon(Icons.flash_on_rounded),size: 50.0),
+                  bottomIcon(icon: Icon(Icons.insert_photo_outlined),size: 50.0,onpress: (){
+                    //to switch on and off the tourch light in the phone
+                   }),
                   SizedBox(width: 20.0,),
                   bottomIcon(icon: Icon(Icons.fiber_manual_record_outlined),size: 100.0,onpress: (){
                    //need to do taking picture rasks here.

@@ -3,9 +3,11 @@ import 'package:whatsappclonefiles/frontend/chatscreen.dart';
 import 'frontend/camera.dart';
 import 'package:camera/camera.dart';
 
+
 List<CameraDescription> cameras;
 
 Future<void> main() async{
+
   WidgetsFlutterBinding.ensureInitialized();
 
   cameras = await availableCameras();
