@@ -7,7 +7,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.flash" />
    <application
-        android:requestLegacyExternalStorage="true"
+       android:requestLegacyExternalStorage="true"
         android:label="whatsappclonefiles"
         android:icon="@mipmap/ic_launcher">
         <activity

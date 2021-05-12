@@ -1,6 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-
+import 'package:image_picker/image_picker.dart';
 
 
 class Camera extends StatefulWidget {
@@ -58,6 +60,8 @@ class _CameraState extends State<Camera> {
 
   int _oldIndex=0;
   Icon iconForcam=Icon(Icons.camera_front);
+  File _image;
+  final picker = ImagePicker();
 
 
   @override
@@ -78,12 +82,13 @@ class _CameraState extends State<Camera> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(width: 20.0,),
-                  bottomIcon(icon: Icon(Icons.insert_photo_outlined),size: 50.0,onpress: (){
-                    //to switch on and off the tourch light in the phone
+                  bottomIcon(icon: Icon(Icons.insert_photo_outlined),size: 50.0,onpress: () async{
+                    await picker.getImage(source: ImageSource.gallery);
                    }),
                   SizedBox(width: 20.0,),
-                  bottomIcon(icon: Icon(Icons.fiber_manual_record_outlined),size: 100.0,onpress: (){
-                   //need to do taking picture rasks here.
+                  bottomIcon(icon: Icon(Icons.fiber_manual_record_outlined),size: 100.0,onpress: () async{
+                   //need to do taking picture here.
+                    await picker.getImage(source: ImageSource.camera);
                   }),
                   SizedBox(width: 30.0,),
                   bottomIcon(icon: iconForcam,size: 50.0,onpress: (){
